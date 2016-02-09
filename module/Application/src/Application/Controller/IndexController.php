@@ -10,6 +10,8 @@ class IndexController extends AbstractActionController
     public function indexAction()
     {
         $viewModel = new ViewModel();
+
+
         return $viewModel;
     }
 }

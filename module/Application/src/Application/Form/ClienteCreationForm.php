@@ -4,6 +4,7 @@ namespace Application\Form;
 use Zend\Form\Element\Submit;
 use Zend\Form\Element\Text;
 use Zend\Form\Form;
+use Zend\I18n\Validator\PhoneNumber;
 use Zend\InputFilter\InputFilter;
 
 class ClienteCreationForm extends Form
@@ -91,35 +92,17 @@ class ClienteCreationForm extends Form
                 ),
             ),
         ));
-        $inputFilter->add(array(
-            'name' => 'num',
-            'required' => true,
-            'validators' => array(
-                array(
-                    'name' => 'Zend\I18n\Validator\IsInt',
-                    'options' => array(
-                        'allowWhiteSpace' => false,
-                        'min'=> '10',
-                        'max'=>'10',
-                    ),
-                ),
-            ),
-        ));
+        $phoneValidator = new PhoneNumber();
+        $phoneValidator->setCountry('it');
 
         $inputFilter->add(array(
             'name' => 'num',
             'required' => true,
             'validators' => array(
-                array(
-                    'name' => 'Zend\Validator\StringLength',
-                    'options' => array(
-                        'allowWhiteSpace' => false,
-                        'min'=> '8',
-                        'max'=>'11',
-                    ),
-                ),
+                $phoneValidator,
             ),
         ));
+
         return $inputFilter;
 
     }
