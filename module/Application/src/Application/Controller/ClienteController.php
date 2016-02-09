@@ -2,6 +2,7 @@
 
 namespace Application\Controller;
 
+use Application\Entity\Cliente;
 use Application\Form\ClienteCreationForm;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
@@ -42,13 +43,16 @@ class ClienteController extends AbstractActionController
                 $nome = $form->getData()['name'];
                 $cognome = $form->getData()['cognome'];
                 $email = $form->getData()['email'];
-                $telefono= $form->getData()['num'];
+                $telefono = $form->getData()['num'];
+                echo $nome;
+                echo $cognome;
+                echo $email;
+                echo $telefono;
 
 
                 /** @var EntityManager $em */
                 $em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
 
-                $em->find('Application\Entity\Cliente', 1);
 
                 $cliente = new Cliente();
                 $cliente->setNome($nome);

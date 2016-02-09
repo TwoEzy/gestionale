@@ -37,7 +37,7 @@ class Cliente
     private $email;
 
     /**
-     * @ORM\Column(name="numero", type="integer", length=255, nullable=false)
+     * @ORM\Column(name="numero", type="integer", nullable=false)
      */
     private $numero;
 
