@@ -114,8 +114,8 @@ class ClienteCreationForm extends Form
                     'name' => 'Zend\Validator\StringLength',
                     'options' => array(
                         'allowWhiteSpace' => false,
-                        'min'=> '10',
-                        'max'=>'10',
+                        'min'=> '8',
+                        'max'=>'11',
                     ),
                 ),
             ),
