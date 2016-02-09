@@ -26,6 +26,17 @@ return array(
                     ),
                 ),
             ),
+            'createcliente' => array(
+                'type' => 'literal',
+                'options' => array(
+                    'route'    => '/cliente/create',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Cliente',
+                        'action'     => 'create',
+                    ),
+                ),
+            ),
+
         ),
     ),
     'service_manager' => array(

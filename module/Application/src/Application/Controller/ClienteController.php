@@ -12,4 +12,10 @@ class ClienteController extends AbstractActionController
         $viewModel = new ViewModel();
         return $viewModel;
     }
+
+    public function createAction()
+    {
+        $viewModel = new ViewModel();
+        return $viewModel;
+    }
 }
