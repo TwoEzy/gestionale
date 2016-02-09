@@ -28,7 +28,13 @@ class ClienteController extends AbstractActionController
             $form->setData($request->getPost());
             if ($form->isValid()) {
                 $nome = $form->getData()['name'];
+                $cognome = $form->getData()['cognome'];
+                $email = $form->getData()['email'];
+                $telefono= $form->getData()['num'];
                 echo $nome;
+                echo $cognome;
+                echo $email;
+                echo $telefono;
             }
         }
         $viewModel->setVariable("form", $form);
