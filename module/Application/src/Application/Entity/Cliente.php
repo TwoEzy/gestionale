@@ -41,10 +41,25 @@ class Cliente
      */
     private $numero;
 
+    /**
+     * @ORM\Column(name="dataCreate", type="datetime", nullable=false)
+     */
+    private $dateCreate;
+
 
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getDateCreate()
+    {
+        return $this->dateCreate;
+    }
+
+    public function setDateCreate($dateCreate)
+    {
+        $this->dateCreate = $dateCreate;
     }
 
     public function getCognome()
