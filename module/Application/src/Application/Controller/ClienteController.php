@@ -28,6 +28,9 @@ class ClienteController extends AbstractActionController
         return $viewModel;
     }
 
+    /**
+     * @return ViewModel
+     */
     public function createAction()
     {
         $viewModel = new ViewModel();
@@ -44,10 +47,10 @@ class ClienteController extends AbstractActionController
                 $cognome = $form->getData()['cognome'];
                 $email = $form->getData()['email'];
                 $telefono = $form->getData()['num'];
-                echo $nome;
-                echo $cognome;
-                echo $email;
-                echo $telefono;
+                $dateCreate = new \DateTime( 'now',  new \DateTimeZone( 'GMT+1' ) );
+                echo '$dateCreate->format(\'Y-m-d h:i:s\')'.PHP_EOL;
+
+
 
 
                 /** @var EntityManager $em */
@@ -59,7 +62,7 @@ class ClienteController extends AbstractActionController
                 $cliente->setCognome($cognome);
                 $cliente->setEmail($email);
                 $cliente->setNumero($telefono);
-
+                $cliente->setDateCreate($dateCreate);
                 $em->persist($cliente);
                 $em->flush();
 
